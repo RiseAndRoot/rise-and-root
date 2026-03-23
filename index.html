@@ -28,16 +28,12 @@ body{
 nav{
   position:fixed;
   width:100%;
-  padding:20px 60px;
-  display:flex;
-  justify-content:center;
+  padding:20px;
+  text-align:center;
   background:#070c12;
   z-index:10;
-}
-nav h1{
   color:var(--gold);
   font-family:'Cormorant Garamond';
-  font-size:28px;
 }
 
 /* HERO */
@@ -56,44 +52,58 @@ nav h1{
   inset:0;
   background:rgba(0,0,0,0.6);
 }
-.hero-content{
+.hero h1{
   position:relative;
   z-index:2;
-}
-.hero h2{
   font-size:64px;
-  font-family:'Cormorant Garamond';
   color:white;
-}
-.hero p{
-  margin-top:20px;
-  font-size:20px;
+  font-family:'Cormorant Garamond';
 }
 
 /* SECTION */
 section{padding:100px 60px}
 
-/* ABOUT SECTION (MATCHED TO IMAGE) */
+/* LEGACY */
+.legacy-header{text-align:center;margin-bottom:60px}
+.legacy-header h2{
+  font-size:56px;
+  color:var(--gold);
+  font-family:'Cormorant Garamond';
+}
+.legacy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+.legacy-card{
+  background:#0b1118;
+  border:1px solid #1c2630;
+  padding:40px;
+  border-radius:16px;
+}
+.legacy-image img{width:100%;border-radius:16px}
+
+/* PRODUCT */
+.product{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+.product img{width:100%}
+.price{color:var(--gold);font-size:28px;margin:10px 0}
+button{
+  padding:14px 30px;
+  background:var(--gold);
+  border:none;
+  cursor:pointer;
+}
+
+/* ABOUT */
 .about{
   display:grid;
   grid-template-columns:1.2fr 1fr;
   gap:60px;
-  align-items:start;
 }
-
-.about h2{
-  font-family:'Cormorant Garamond';
-  color:var(--gold);
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-.about p{
-  line-height:1.8;
-  font-size:18px;
-}
-
-/* RIGHT CARDS */
 .info-box{
   background:#0b1118;
   border:1px solid #1c2630;
@@ -102,41 +112,34 @@ section{padding:100px 60px}
   margin-bottom:30px;
 }
 
-.info-box h3{
-  font-size:32px;
-  color:white;
+/* REVIEWS */
+.reviews h2{
+  text-align:center;
   font-family:'Cormorant Garamond';
-  margin-bottom:20px;
+  font-size:48px;
+  color:white;
+  margin-bottom:40px;
 }
-
-.info-item{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin:15px 0;
-  font-size:18px;
-}
-
-/* PRODUCT */
-.product{
+.review-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
 }
-.product img{
-  width:100%;
+.review{
+  background:#0b1118;
+  border:1px solid #1c2630;
+  padding:30px;
+  border-radius:16px;
 }
-.price{
-  color:var(--gold);
-  font-size:28px;
-  margin:10px 0;
-}
-
-button{
-  padding:14px 30px;
-  background:var(--gold);
-  border:none;
-  cursor:pointer;
+.ai-box{
+  background:#0e2a24;
+  border:1px solid #2e5a50;
+  padding:30px;
+  border-radius:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
 }
 
 /* FORM */
@@ -151,7 +154,7 @@ input,textarea{
 
 /* MOBILE */
 @media(max-width:900px){
-  .about,.product{
+  .legacy-grid,.product,.about,.review-grid{
     grid-template-columns:1fr;
   }
 }
@@ -160,86 +163,83 @@ input,textarea{
 
 <body>
 
-<nav>
-  <h1>Rise & Root</h1>
-</nav>
+<nav>Rise & Root</nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h2>Quietly Uncompromising Brew</h2>
-    <p>Experience the luxury of fine tea</p>
+  <h1>Quietly Uncompromising Brew</h1>
+</section>
+
+<!-- LEGACY -->
+<section>
+  <div class="legacy-header">
+    <h2>A Legacy in Every Leaf</h2>
+    <p>The Story of The Indian legacy</p>
+  </div>
+
+  <div class="legacy-grid">
+    <div class="legacy-card">
+      <h3>From Peak to Cup</h3>
+      <p>Premium tea crafted from finest regions...</p>
+    </div>
+
+    <div class="legacy-image">
+      <img src="./packet.png">
+    </div>
   </div>
 </section>
 
-<!-- ABOUT (PIXEL MATCH) -->
-<section class="about">
-
-  <div>
-    <h2>About Rise & Root</h2>
-    <p>
-      Rise & Root, founded by Biotechnologist Apurva Dwivedi, was born from a passion for authentic, natural wellness.
-      We believe every cup of tea should be a sip of luxury—an organic, healthy ritual that connects you to nature's
-      finest offerings. We journey to the world's most renowned tea regions to source leaves of exceptional quality
-      and character, ensuring a real, authentic taste in every brew. Our dedication to ethical sourcing and traditional
-      craftsmanship means we share only the most exquisite and luxurious teas with connoisseurs around the globe.
-    </p>
-  </div>
-
-  <div>
-    <div class="info-box">
-      <h3>FSSAI Certified</h3>
-      <div class="info-item">Lic. No: 20425001002752</div>
-    </div>
-
-    <div class="info-box">
-      <h3>Contact Us</h3>
-      <div class="info-item">📧 riseandroot.info@gmail.com</div>
-      <div class="info-item">📞 +91 8789646109</div>
-      <div class="info-item">📍 Patna, Bihar</div>
-    </div>
-  </div>
-
-</section>
-
-<!-- PRODUCT -->
+<!-- ORDER -->
 <section class="product">
   <img src="./packet.png">
   <div>
     <h2>The Indian Legacy</h2>
     <div class="price">₹110 / 250g</div>
-    <p>Premium tea with authentic taste.</p>
     <button onclick="submitForm()">Order Now</button>
   </div>
 </section>
 
-<!-- FORM -->
-<section>
-  <h2>Order / Feedback</h2>
+<!-- ABOUT -->
+<section class="about">
+  <div>
+    <h2 style="color:var(--gold)">About Rise & Root</h2>
+    <p>Luxury tea brand with authentic sourcing...</p>
+  </div>
 
-  <input id="f-name" placeholder="Name">
-  <input id="f-contact" placeholder="Contact">
-  <textarea id="f-message" placeholder="Message"></textarea>
+  <div>
+    <div class="info-box">FSSAI Lic: 20425001002752</div>
+    <div class="info-box">Contact: +91 8789646109</div>
+  </div>
+</section>
 
-  <button onclick="submitForm()">Submit</button>
+<!-- REVIEWS (LAST) -->
+<section class="reviews">
+
+  <h2>Customer Experiences</h2>
+
+  <div class="ai-box">
+    <div>
+      <h3>AI-Powered Summary</h3>
+      <p>Click to summarize reviews</p>
+    </div>
+    <button>Summarize</button>
+  </div>
+
+  <div class="review-grid">
+    <div class="review">Amazing tea experience!</div>
+    <div class="review">Loved the aroma!</div>
+    <div class="review">Very premium taste.</div>
+    <div class="review">Worth every rupee.</div>
+  </div>
+
 </section>
 
 <script>
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzokr_yQjDO0kX5ZgqAsQn1pHwT8loIs3kEuH0j0p33XFbqf9l8Aw8iuSh4Y_MVQF-B/exec";
 
 async function submitForm(){
-  const name=document.getElementById('f-name').value;
-  const contact=document.getElementById('f-contact').value;
-  const message=document.getElementById('f-message').value;
-
-  const params=new URLSearchParams({name,contact,message});
-
-  await fetch(SCRIPT_URL+"?"+params.toString(),{
-    method:"GET",
-    mode:"no-cors"
-  });
-
-  alert("Submitted!");
+  await fetch(SCRIPT_URL,{mode:'no-cors'});
+  alert("Order placed!");
 }
 </script>
 
