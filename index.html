@@ -1,252 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rise & Root — Premium Indian Tea</title>
+<title>Rise & Root</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --gold:#C9A84C;
-  --gold-light:#E2C97E;
-  --black:#0D0C0A;
-  --deep:#141210;
-  --muted:#6E6860;
-  --white:#FAF8F4;
+  --gold:#D4AF37;
+  --bg:#070c12;
+  --card:#0e141b;
+  --text:#b8c0c8;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  background:var(--black);
-  color:var(--muted);
-  font-family:'Jost',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
 }
 
+/* NAV */
 nav{
   position:fixed;
   width:100%;
   padding:20px 60px;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
+  background:#070c12;
   z-index:10;
-  transition:.3s;
 }
-nav.scrolled{
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
-}
-nav a{
+nav h1{
   color:var(--gold);
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:2px;
+  font-family:'Cormorant Garamond';
+  font-size:28px;
 }
 
-#hero{
+/* HERO */
+.hero{
   height:100vh;
+  background:url('https://i.postimg.cc/qR0881F5/Gemini-Generated-Image-2k8l9m2k8l9m2k8l.png') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+.hero h2{
+  font-size:64px;
+  font-family:'Cormorant Garamond';
+  color:white;
+}
+.hero p{
+  margin-top:20px;
+  font-size:20px;
+}
+
+/* SECTION */
+section{padding:100px 60px}
+
+/* ABOUT SECTION (MATCHED TO IMAGE) */
+.about{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.about h2{
+  font-family:'Cormorant Garamond';
+  color:var(--gold);
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.about p{
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* RIGHT CARDS */
+.info-box{
+  background:#0b1118;
+  border:1px solid #1c2630;
+  padding:30px;
+  border-radius:16px;
+  margin-bottom:30px;
+}
+
+.info-box h3{
+  font-size:32px;
+  color:white;
+  font-family:'Cormorant Garamond';
+  margin-bottom:20px;
+}
+
+.info-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:15px 0;
+  font-size:18px;
+}
+
+/* PRODUCT */
+.product{
   display:grid;
   grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:100px 60px 40px;
+  gap:60px;
 }
-
-.hero-text h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:72px;
-  color:var(--white);
-}
-.hero-text span{
-  color:var(--gold-light);
-}
-.hero-text p{
-  margin-top:20px;
-}
-
-.hero-btn{
-  display:inline-block;
-  margin-top:40px;
-  padding:16px 40px;
-  background:var(--gold);
-  color:black;
-  text-decoration:none;
-}
-
-.hero-img img{
-  width:420px;
-  max-width:90%;
-  animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-  50%{transform:translateY(-20px)}
-}
-
-section{padding:120px 60px}
-
-.section-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:48px;
-  color:var(--white);
-}
-
-#collection{background:var(--deep)}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  margin-top:60px;
-}
-
-.card{
-  padding:40px;
-}
-
-#contact{background:#0f0e0c}
-
-.form{max-width:500px;margin-top:40px}
-
-input,select,textarea{
+.product img{
   width:100%;
-  padding:14px;
-  margin-bottom:12px;
-  background:#1a1815;
-  border:1px solid #2a2722;
-  color:white;
+}
+.price{
+  color:var(--gold);
+  font-size:28px;
+  margin:10px 0;
 }
 
 button{
-  width:100%;
-  padding:14px;
+  padding:14px 30px;
   background:var(--gold);
   border:none;
+  cursor:pointer;
 }
 
-#form-status{
-  display:none;
+/* FORM */
+input,textarea{
+  width:100%;
+  padding:14px;
   margin-bottom:12px;
-  padding:10px;
-  font-size:12px;
+  background:#111;
+  border:none;
+  color:white;
 }
 
-footer{
-  padding:40px;
-  text-align:center;
-}
-
+/* MOBILE */
 @media(max-width:900px){
-  #hero{grid-template-columns:1fr;text-align:center}
-  .grid{grid-template-columns:1fr}
+  .about,.product{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<nav id="nav">
-  <div style="color:var(--gold)">Rise & Root</div>
-  <a href="#collection">Teas</a>
+<nav>
+  <h1>Rise & Root</h1>
 </nav>
 
-<section id="hero">
-  <div class="hero-text">
-    <h1>Where every cup finds its <span>roots.</span></h1>
-    <p>Premium Indian teas sourced from the finest estates.</p>
-    <a href="#collection" class="hero-btn">Explore</a>
-  </div>
-
-  <div class="hero-img">
-    <img src="./packet.png" alt="Tea Pack"/>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Quietly Uncompromising Brew</h2>
+    <p>Experience the luxury of fine tea</p>
   </div>
 </section>
 
-<section id="collection">
-  <h2 class="section-title">The Collection</h2>
-  <div class="grid">
-    <div class="card"><h3>Darjeeling</h3></div>
-    <div class="card"><h3>Assam</h3></div>
-    <div class="card"><h3>Blend</h3></div>
+<!-- ABOUT (PIXEL MATCH) -->
+<section class="about">
+
+  <div>
+    <h2>About Rise & Root</h2>
+    <p>
+      Rise & Root, founded by Biotechnologist Apurva Dwivedi, was born from a passion for authentic, natural wellness.
+      We believe every cup of tea should be a sip of luxury—an organic, healthy ritual that connects you to nature's
+      finest offerings. We journey to the world's most renowned tea regions to source leaves of exceptional quality
+      and character, ensuring a real, authentic taste in every brew. Our dedication to ethical sourcing and traditional
+      craftsmanship means we share only the most exquisite and luxurious teas with connoisseurs around the globe.
+    </p>
+  </div>
+
+  <div>
+    <div class="info-box">
+      <h3>FSSAI Certified</h3>
+      <div class="info-item">Lic. No: 20425001002752</div>
+    </div>
+
+    <div class="info-box">
+      <h3>Contact Us</h3>
+      <div class="info-item">📧 riseandroot.info@gmail.com</div>
+      <div class="info-item">📞 +91 8789646109</div>
+      <div class="info-item">📍 Patna, Bihar</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PRODUCT -->
+<section class="product">
+  <img src="./packet.png">
+  <div>
+    <h2>The Indian Legacy</h2>
+    <div class="price">₹110 / 250g</div>
+    <p>Premium tea with authentic taste.</p>
+    <button onclick="submitForm()">Order Now</button>
   </div>
 </section>
 
-<section id="contact">
-  <h2 class="section-title">Enquire</h2>
+<!-- FORM -->
+<section>
+  <h2>Order / Feedback</h2>
 
-  <div class="form">
-    <div id="form-status"></div>
+  <input id="f-name" placeholder="Name">
+  <input id="f-contact" placeholder="Contact">
+  <textarea id="f-message" placeholder="Message"></textarea>
 
-    <input id="f-name" placeholder="Your Name"/>
-    <input id="f-contact" placeholder="Phone or Email"/>
-    <select id="f-enquiry">
-      <option>General</option>
-      <option>Bulk Order</option>
-    </select>
-    <textarea id="f-message" placeholder="Message"></textarea>
-
-    <button id="submitBtn" onclick="submitForm()">Send</button>
-  </div>
+  <button onclick="submitForm()">Submit</button>
 </section>
-
-<footer>© Rise & Root</footer>
 
 <script>
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav')
-    .classList.toggle('scrolled',window.scrollY>50)
-});
-
-/* ✅ YOUR SCRIPT URL ADDED */
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzokr_yQjDO0kX5ZgqAsQn1pHwT8loIs3kEuH0j0p33XFbqf9l8Aw8iuSh4Y_MVQF-B/exec";
 
 async function submitForm(){
-  const name=document.getElementById('f-name').value.trim();
-  const contact=document.getElementById('f-contact').value.trim();
-  const enquiry=document.getElementById('f-enquiry').value;
-  const message=document.getElementById('f-message').value.trim();
-  const btn=document.getElementById('submitBtn');
+  const name=document.getElementById('f-name').value;
+  const contact=document.getElementById('f-contact').value;
+  const message=document.getElementById('f-message').value;
 
-  if(!name||!contact){
-    showStatus("Please fill required fields","warn");
-    return;
-  }
+  const params=new URLSearchParams({name,contact,message});
 
-  btn.innerText="Sending...";
-  btn.disabled=true;
+  await fetch(SCRIPT_URL+"?"+params.toString(),{
+    method:"GET",
+    mode:"no-cors"
+  });
 
-  try{
-    const params=new URLSearchParams({name,contact,enquiry,message});
-    await fetch(SCRIPT_URL+"?"+params.toString(),{
-      method:"GET",
-      mode:"no-cors"
-    });
-
-    showStatus("Message sent successfully","success");
-    btn.innerText="Sent ✓";
-  }catch(e){
-    showStatus("Error sending message","error");
-    btn.innerText="Send";
-    btn.disabled=false;
-  }
-}
-
-function showStatus(msg,type){
-  const el=document.getElementById('form-status');
-  el.innerText=msg;
-  el.style.display='block';
-
-  if(type==='success'){
-    el.style.background='rgba(100,140,60,.1)';
-    el.style.color='#98C46A';
-  }else if(type==='warn'){
-    el.style.background='rgba(201,168,76,.1)';
-    el.style.color='#E2C97E';
-  }else{
-    el.style.background='rgba(200,60,60,.1)';
-    el.style.color='#ff6b6b';
-  }
+  alert("Submitted!");
 }
 </script>
 
