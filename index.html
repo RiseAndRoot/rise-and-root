@@ -25,10 +25,55 @@ body{
   font-family:'Inter',sans-serif;
 }
 
-section{padding:120px 60px}
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#050a10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px 0;
+  z-index:1000;
+  border-bottom:1px solid rgba(212,175,55,0.2);
+}
+
+.logo{
+  position:absolute;
+  left:40px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#1a1f25,#0b1118);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-family:'Cormorant Garamond';
+  font-size:16px;
+  text-align:center;
+}
+
+.logo span{
+  display:block;
+  line-height:1.1;
+}
+
+.brand{
+  font-family:'Cormorant Garamond';
+  font-size:48px;
+  color:var(--gold);
+}
+
+/* SECTIONS */
+section{
+  padding:120px 60px;
+}
 
 /* HERO */
 .hero{
+  margin-top:100px;
   height:100vh;
   background:url('https://i.postimg.cc/qR0881F5/Gemini-Generated-Image-2k8l9m2k8l9m2k8l.png') center/cover no-repeat;
   display:flex;
@@ -36,6 +81,7 @@ section{padding:120px 60px}
   justify-content:center;
   text-align:center;
 }
+
 .hero h1{
   font-size:64px;
   color:white;
@@ -67,12 +113,14 @@ section{padding:120px 60px}
   padding:50px;
   border-radius:18px;
 }
+
 .legacy-card h3{
   font-family:'Cormorant Garamond';
   font-size:36px;
   color:white;
   margin-bottom:20px;
 }
+
 .legacy-card p{
   line-height:1.9;
   margin-bottom:20px;
@@ -156,6 +204,7 @@ section{padding:120px 60px}
 .contact-list{
   list-style:none;
 }
+
 .contact-list li{
   margin-bottom:10px;
 }
@@ -186,19 +235,9 @@ button{
 .reviews h2{
   text-align:center;
   font-family:'Cormorant Garamond';
-  font-size:48px;
+  font-size:52px;
   color:white;
-  margin-bottom:40px;
-}
-
-.ai-box{
-  background:#0e2a24;
-  border:1px solid #2e5a50;
-  padding:30px;
-  border-radius:16px;
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:40px;
+  margin-bottom:60px;
 }
 
 .review-grid{
@@ -211,7 +250,52 @@ button{
   background:var(--card);
   border:1px solid var(--border);
   padding:30px;
-  border-radius:16px;
+  border-radius:18px;
+  transition:.3s;
+}
+
+.review:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+}
+
+.review-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.review-top h3{
+  font-family:'Cormorant Garamond';
+  color:white;
+}
+
+.stars{
+  color:var(--gold);
+}
+
+.review p{
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:#050a10;
+  border-top:1px solid rgba(212,175,55,0.2);
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+
+.footer-brand{
+  font-family:'Cormorant Garamond';
+  font-size:36px;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.footer-copy{
+  color:#aaa;
 }
 
 /* MOBILE */
@@ -219,11 +303,21 @@ button{
   .legacy-grid,.about-grid,.order-grid,.review-grid{
     grid-template-columns:1fr;
   }
+
+  .logo{left:20px}
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span>RISE<br>&<br>ROOT</span>
+  </div>
+  <div class="brand">Rise & Root</div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -238,194 +332,99 @@ button{
   </div>
 
   <div class="legacy-grid">
-
     <div class="legacy-card">
       <h3>From Peak to Cup</h3>
-
-      <p>
-        Hailing from the mist-shrouded Wuyi Mountains, where tea cultivation is a generational art, our Emperor's Golden Needle was once a tea reserved for royalty. It grows on steep, rocky cliffs, absorbing a unique mineral terroir.
-      </p>
-
-      <p>
-        Plucked only during a few days in early spring, our masters select only the most tender, unopened buds, still covered in fine, silvery-gold down. This "first flush" captures the plant's most potent and delicate flavors. The buds are then withered, dried, and sorted by hand, ensuring that only the most perfect needles make it into your cup.
-      </p>
+      <p>Hailing from the mist-shrouded mountains, this tea was once reserved for royalty.</p>
+      <p>Handpicked buds ensure delicate and luxurious flavor.</p>
     </div>
 
     <div class="legacy-image">
-      <img src="packet.png" alt="Tea">
+      <img src="packet.png">
     </div>
-
   </div>
 </section>
 
 <!-- ABOUT -->
 <section>
   <div class="about-grid">
-
     <div class="about-left">
       <h2>About Rise & Root</h2>
-
-      <p>
-        Rise & Root, founded by Biotechnologist Apurva Dwivedi, was born from a passion for authentic, natural wellness. We believe every cup of tea should be a sip of luxury—an organic, healthy ritual that connects you to nature's finest offerings.
-      </p>
-
-      <p>
-        We journey to the world's most renowned tea regions to source leaves of exceptional quality and character, ensuring a real, authentic taste in every brew.
-      </p>
-
-      <p>
-        Our dedication to ethical sourcing and traditional craftsmanship means we share only the most exquisite and luxurious teas with connoisseurs around the globe.
-      </p>
+      <p>Founded by Apurva Dwivedi, we focus on luxury tea experiences.</p>
+      <p>We source globally for the finest quality.</p>
     </div>
 
     <div class="about-right">
-
       <div class="info-card">
         <h3>FSSAI Certified</h3>
-        <p>Lic. No: 20425001002752</p>
+        <p>20425001002752</p>
       </div>
 
       <div class="info-card">
-        <h3>Contact Us</h3>
+        <h3>Contact</h3>
         <p>📧 riseandroot.info@gmail.com</p>
         <p>📞 +91 8789646109</p>
-        <p>📍 Patna, Bihar</p>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <!-- ORDER -->
 <section id="order">
-
   <div class="order-grid">
 
     <div>
       <p class="section-label">Get in Touch</p>
-
-      <h2 class="order-title">
-        <em>Order</em> or enquire today
-      </h2>
-
-      <p class="order-desc">
-        Available directly through us for individual orders, bulk purchasing and gifting.
-        Reach us on WhatsApp for the fastest response.
-      </p>
+      <h2 class="order-title"><em>Order</em> or enquire today</h2>
+      <p class="order-desc">Bulk and individual orders available.</p>
 
       <ul class="contact-list">
         <li>WhatsApp: +91 90453 68606</li>
         <li>Email: riseandroot.info@gmail.com</li>
-        <li>FSSAI: 20425001002752</li>
-        <li>Ships Pan-India</li>
-        <li>Response: 2–4 hours</li>
       </ul>
     </div>
 
     <div>
-      <form id="rr-form">
-
-        <div class="form-group">
-          <input type="text" id="f-name" placeholder="Your Name">
-        </div>
-
-        <div class="form-group">
-          <input type="text" id="f-contact" placeholder="Email / WhatsApp">
-        </div>
-
-        <div class="form-group">
-          <select id="f-enquiry">
-            <option>Select enquiry</option>
-            <option>Order</option>
-            <option>Bulk</option>
-            <option>Wholesale</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <textarea id="f-message" placeholder="Message"></textarea>
-        </div>
-
-        <button type="button" onclick="submitForm()">Send Enquiry</button>
-
+      <form>
+        <input placeholder="Your Name"><br><br>
+        <input placeholder="Contact"><br><br>
+        <textarea placeholder="Message"></textarea><br><br>
+        <button>Send</button>
       </form>
     </div>
 
   </div>
-
 </section>
 
-
-<script>
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzokr_yQjDO0kX5ZgqAsQn1pHwT8loIs3kEuH0j0p33XFbqf9l8Aw8iuSh4Y_MVQF-B/exec";
-
-async function submitForm(){
-  const name=document.getElementById('f-name').value;
-  const contact=document.getElementById('f-contact').value;
-  const enquiry=document.getElementById('f-enquiry').value;
-  const message=document.getElementById('f-message').value;
-
-  const params=new URLSearchParams({name,contact,enquiry,message});
-
-  await fetch(SCRIPT_URL+"?"+params.toString(),{mode:"no-cors"});
-  alert("Message Sent!");
-}
-</script>
 <!-- REVIEWS -->
 <section class="reviews">
-
   <h2>Customer Experiences</h2>
 
   <div class="review-grid">
 
-    <!-- REVIEW 1 -->
     <div class="review">
       <div class="review-top">
         <h3>Priya S.</h3>
         <div class="stars">★★★★★</div>
       </div>
-      <p>
-        "Absolutely divine. The aroma alone is worth the price. It's so delicate and nuanced."
-      </p>
+      <p>"Absolutely divine. The aroma alone is worth the price."</p>
     </div>
 
-    <!-- REVIEW 2 -->
     <div class="review">
       <div class="review-top">
         <h3>Rohan K.</h3>
         <div class="stars">★★★★★</div>
       </div>
-      <p>
-        "A masterpiece of tea. I have never tasted anything quite like it. Smooth, sweet, and utterly captivating."
-      </p>
-    </div>
-
-    <!-- REVIEW 3 -->
-    <div class="review">
-      <div class="review-top">
-        <h3>Anjali P.</h3>
-        <div class="stars">★★★★☆</div>
-      </div>
-      <p>
-        "Very high quality, though a bit more subtle than I expected. It grew on me after a few cups."
-      </p>
-    </div>
-
-    <!-- REVIEW 4 -->
-    <div class="review">
-      <div class="review-top">
-        <h3>Vikram G.</h3>
-        <div class="stars">★★★★★</div>
-      </div>
-      <p>
-        "This is my new special occasion tea. It feels like a celebration in a cup. Worth every penny."
-      </p>
+      <p>"A masterpiece of tea."</p>
     </div>
 
   </div>
-
 </section>
-  
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Rise & Root</div>
+  <p class="footer-copy">© 2026 Rise & Root. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
