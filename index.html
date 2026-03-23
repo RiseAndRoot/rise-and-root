@@ -12,7 +12,8 @@
 :root{
   --gold:#D4AF37;
   --bg:#070c12;
-  --card:#0e141b;
+  --card:#0b1118;
+  --border:#1c2630;
   --text:#b8c0c8;
 }
 
@@ -24,17 +25,7 @@ body{
   font-family:'Inter',sans-serif;
 }
 
-/* NAV */
-nav{
-  position:fixed;
-  width:100%;
-  padding:20px;
-  text-align:center;
-  background:#070c12;
-  z-index:10;
-  color:var(--gold);
-  font-family:'Cormorant Garamond';
-}
+section{padding:120px 60px}
 
 /* HERO */
 .hero{
@@ -44,72 +35,151 @@ nav{
   align-items:center;
   justify-content:center;
   text-align:center;
-  position:relative;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
 }
 .hero h1{
-  position:relative;
-  z-index:2;
   font-size:64px;
   color:white;
   font-family:'Cormorant Garamond';
 }
 
-/* SECTION */
-section{padding:100px 60px}
-
 /* LEGACY */
-.legacy-header{text-align:center;margin-bottom:60px}
+.legacy-header{text-align:center;margin-bottom:70px;}
 .legacy-header h2{
   font-size:56px;
   color:var(--gold);
   font-family:'Cormorant Garamond';
 }
+.legacy-header p{
+  color:#9aa4ad;
+  font-size:20px;
+}
+
 .legacy-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;
+  align-items:center;
 }
-.legacy-card{
-  background:#0b1118;
-  border:1px solid #1c2630;
-  padding:40px;
-  border-radius:16px;
-}
-.legacy-image img{width:100%;border-radius:16px}
 
-/* PRODUCT */
-.product{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+.legacy-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:50px;
+  border-radius:18px;
 }
-.product img{width:100%}
-.price{color:var(--gold);font-size:28px;margin:10px 0}
-button{
-  padding:14px 30px;
-  background:var(--gold);
-  border:none;
-  cursor:pointer;
+.legacy-card h3{
+  font-family:'Cormorant Garamond';
+  font-size:36px;
+  color:white;
+  margin-bottom:20px;
+}
+.legacy-card p{
+  line-height:1.9;
+  margin-bottom:20px;
+}
+
+.legacy-image img{
+  width:100%;
+  border-radius:18px;
 }
 
 /* ABOUT */
-.about{
+.about-grid{
   display:grid;
   grid-template-columns:1.2fr 1fr;
-  gap:60px;
+  gap:80px;
 }
-.info-box{
-  background:#0b1118;
-  border:1px solid #1c2630;
-  padding:30px;
-  border-radius:16px;
+
+.about-left h2{
+  font-family:'Cormorant Garamond';
+  font-size:56px;
+  color:var(--gold);
   margin-bottom:30px;
+}
+
+.about-left p{
+  line-height:1.9;
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+.about-right{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+.info-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:18px;
+}
+
+.info-card h3{
+  font-family:'Cormorant Garamond';
+  font-size:30px;
+  color:white;
+  margin-bottom:10px;
+}
+
+/* ORDER */
+.order-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.section-label{
+  color:var(--gold);
+  font-size:14px;
+  letter-spacing:.1em;
+}
+
+.order-title{
+  font-family:'Cormorant Garamond';
+  font-size:50px;
+  color:white;
+  margin:20px 0;
+}
+
+.order-title em{
+  color:var(--gold);
+  font-style:normal;
+}
+
+.order-desc{
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.contact-list{
+  list-style:none;
+}
+.contact-list li{
+  margin-bottom:10px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  background:#0b1118;
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:white;
+}
+
+button{
+  background:var(--gold);
+  border:none;
+  padding:14px;
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
 }
 
 /* REVIEWS */
@@ -120,17 +190,7 @@ button{
   color:white;
   margin-bottom:40px;
 }
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
-}
-.review{
-  background:#0b1118;
-  border:1px solid #1c2630;
-  padding:30px;
-  border-radius:16px;
-}
+
 .ai-box{
   background:#0e2a24;
   border:1px solid #2e5a50;
@@ -138,23 +198,25 @@ button{
   border-radius:16px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   margin-bottom:40px;
 }
 
-/* FORM */
-input,textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:12px;
-  background:#111;
-  border:none;
-  color:white;
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.review{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:16px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  .legacy-grid,.product,.about,.review-grid{
+  .legacy-grid,.about-grid,.order-grid,.review-grid{
     grid-template-columns:1fr;
   }
 }
@@ -162,8 +224,6 @@ input,textarea{
 </head>
 
 <body>
-
-<nav>Rise & Root</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -178,41 +238,125 @@ input,textarea{
   </div>
 
   <div class="legacy-grid">
+
     <div class="legacy-card">
       <h3>From Peak to Cup</h3>
-      <p>Premium tea crafted from finest regions...</p>
+
+      <p>
+        Hailing from the mist-shrouded Wuyi Mountains, where tea cultivation is a generational art, our Emperor's Golden Needle was once a tea reserved for royalty. It grows on steep, rocky cliffs, absorbing a unique mineral terroir.
+      </p>
+
+      <p>
+        Plucked only during a few days in early spring, our masters select only the most tender, unopened buds, still covered in fine, silvery-gold down. This "first flush" captures the plant's most potent and delicate flavors. The buds are then withered, dried, and sorted by hand, ensuring that only the most perfect needles make it into your cup.
+      </p>
     </div>
 
     <div class="legacy-image">
-      <img src="./packet.png">
+      <img src="packet.png" alt="Tea">
     </div>
-  </div>
-</section>
 
-<!-- ORDER -->
-<section class="product">
-  <img src="./packet.png">
-  <div>
-    <h2>The Indian Legacy</h2>
-    <div class="price">₹110 / 250g</div>
-    <button onclick="submitForm()">Order Now</button>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="about">
-  <div>
-    <h2 style="color:var(--gold)">About Rise & Root</h2>
-    <p>Luxury tea brand with authentic sourcing...</p>
-  </div>
+<section>
+  <div class="about-grid">
 
-  <div>
-    <div class="info-box">FSSAI Lic: 20425001002752</div>
-    <div class="info-box">Contact: +91 8789646109</div>
+    <div class="about-left">
+      <h2>About Rise & Root</h2>
+
+      <p>
+        Rise & Root, founded by Biotechnologist Apurva Dwivedi, was born from a passion for authentic, natural wellness. We believe every cup of tea should be a sip of luxury—an organic, healthy ritual that connects you to nature's finest offerings.
+      </p>
+
+      <p>
+        We journey to the world's most renowned tea regions to source leaves of exceptional quality and character, ensuring a real, authentic taste in every brew.
+      </p>
+
+      <p>
+        Our dedication to ethical sourcing and traditional craftsmanship means we share only the most exquisite and luxurious teas with connoisseurs around the globe.
+      </p>
+    </div>
+
+    <div class="about-right">
+
+      <div class="info-card">
+        <h3>FSSAI Certified</h3>
+        <p>Lic. No: 20425001002752</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Contact Us</h3>
+        <p>📧 riseandroot.info@gmail.com</p>
+        <p>📞 +91 8789646109</p>
+        <p>📍 Patna, Bihar</p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<!-- REVIEWS (LAST) -->
+<!-- ORDER -->
+<section id="order">
+
+  <div class="order-grid">
+
+    <div>
+      <p class="section-label">Get in Touch</p>
+
+      <h2 class="order-title">
+        <em>Order</em> or enquire today
+      </h2>
+
+      <p class="order-desc">
+        Available directly through us for individual orders, bulk purchasing and gifting.
+        Reach us on WhatsApp for the fastest response.
+      </p>
+
+      <ul class="contact-list">
+        <li>WhatsApp: +91 90453 68606</li>
+        <li>Email: riseandroot.info@gmail.com</li>
+        <li>FSSAI: 20425001002752</li>
+        <li>Ships Pan-India</li>
+        <li>Response: 2–4 hours</li>
+      </ul>
+    </div>
+
+    <div>
+      <form id="rr-form">
+
+        <div class="form-group">
+          <input type="text" id="f-name" placeholder="Your Name">
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="f-contact" placeholder="Email / WhatsApp">
+        </div>
+
+        <div class="form-group">
+          <select id="f-enquiry">
+            <option>Select enquiry</option>
+            <option>Order</option>
+            <option>Bulk</option>
+            <option>Wholesale</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <textarea id="f-message" placeholder="Message"></textarea>
+        </div>
+
+        <button type="button" onclick="submitForm()">Send Enquiry</button>
+
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REVIEWS -->
 <section class="reviews">
 
   <h2>Customer Experiences</h2>
@@ -222,14 +366,27 @@ input,textarea{
       <h3>AI-Powered Summary</h3>
       <p>Click to summarize reviews</p>
     </div>
-    <button>Summarize</button>
+    <button>Summarize Reviews</button>
   </div>
 
   <div class="review-grid">
-    <div class="review">Amazing tea experience!</div>
-    <div class="review">Loved the aroma!</div>
-    <div class="review">Very premium taste.</div>
-    <div class="review">Worth every rupee.</div>
+
+    <div class="review">
+      “Absolutely divine. The aroma alone is worth the price.”
+    </div>
+
+    <div class="review">
+      “A masterpiece of tea. Smooth and captivating.”
+    </div>
+
+    <div class="review">
+      “Very high quality. Grew on me after a few cups.”
+    </div>
+
+    <div class="review">
+      “Feels like a celebration in a cup.”
+    </div>
+
   </div>
 
 </section>
@@ -238,8 +395,15 @@ input,textarea{
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzokr_yQjDO0kX5ZgqAsQn1pHwT8loIs3kEuH0j0p33XFbqf9l8Aw8iuSh4Y_MVQF-B/exec";
 
 async function submitForm(){
-  await fetch(SCRIPT_URL,{mode:'no-cors'});
-  alert("Order placed!");
+  const name=document.getElementById('f-name').value;
+  const contact=document.getElementById('f-contact').value;
+  const enquiry=document.getElementById('f-enquiry').value;
+  const message=document.getElementById('f-message').value;
+
+  const params=new URLSearchParams({name,contact,enquiry,message});
+
+  await fetch(SCRIPT_URL+"?"+params.toString(),{mode:"no-cors"});
+  alert("Message Sent!");
 }
 </script>
 
